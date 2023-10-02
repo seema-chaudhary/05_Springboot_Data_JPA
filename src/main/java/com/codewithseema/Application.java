@@ -38,12 +38,72 @@ public class Application {
 //		
 //		Student updatedstu = stuRepo.save(st1);
 //		System.out.println(updatedstu);
+//		
+//		Student st1 = stuRepo.findById(2).get();// Deleting data by id ***************************
+//		System.out.println(st1);
+//			
+//		stuRepo.delete(st1);
+//		System.out.println("Record Deleted");
 		
-		Student st1 = stuRepo.findById(2).get();// Deleting data by id ***************************
-		System.out.println(st1);
-			
-		stuRepo.delete(st1);
-		System.out.println("Record Deleted");
+//		Student st2 = stuRepo.findByName("seema");// calling custom method ******************************
+//		System.out.println(st2);
+		
+//		Student st2 = stuRepo.findByNameAndAddress("seema", "Delhi");
+//		System.out.println(st2);
+		
+//		List<Student> st2 = (List<Student>) stuRepo.findByNameOrAddress("seema", "delhi");
+//		st2.forEach(s->System.out.println(s));
+		
+//		List<Student> st2 = (List<Student>) stuRepo.findByAddressIsNull();
+//		List<Student> st2 = (List<Student>) stuRepo.findByAddressIsNotNull();
+//		st2.forEach(s->System.out.println(s));
+		
+//		List<Student> st2 = stuRepo.findByNameLike("Seema");
+//		st2.forEach(s->System.out.println(s));
+		
+//		List<Student> st2 = stuRepo.findByNameStartingWith("S");
+//		st2.forEach(s->System.out.println(s));
+		
+//		List<Student> st2 = stuRepo.findByNameContaining("r");
+//		st2.forEach(s->System.out.println(s));
+
+		
+		
+//		 List<Student> st = stuRepo.findByOrderByNameDesc(); 
+//		 st.forEach(e ->System.out.println(e));
+		
+//		 Boolean f = stuRepo.existsByName("Demo");
+//		 System.out.println(f);
+		
+//
+//		// custom query using
+//		
+//		 Student st = stuRepo.getStudentByNameAndAddress("Abhi", "delhi");
+//		 System.out.println(st);
+//		
+//
+//		
+		  List<Student> st = stuRepo.searchName("ravi"); 
+		  st.forEach(e -> System.out.println(e));
+		 
+
+		// pagination
+//		Sort sort = Sort.by("id").descending();
+//
+//		List<Student> listSortStudent = stRepo.findAll(sort);
+//
+//		System.out.println("-----------sorting student details--------");
+//		listSortStudent.forEach(e->System.out.println(e));
+//		System.out.println("------------------------");
+//		
+//		Pageable pageable = PageRequest.of(1, 3, sort);
+//
+//		Page<Student> page = stRepo.findAll(pageable);
+//
+//		page.get().forEach(e -> System.out.println(e));
+//		System.out.println("Size=" + page.getSize());
+//		System.out.println("Elements=" + page.getTotalElements());
+//		System.out.println("Pages=" + page.getTotalPages());
 	}
 
 }
