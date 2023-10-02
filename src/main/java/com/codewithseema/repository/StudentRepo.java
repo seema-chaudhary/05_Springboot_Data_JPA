@@ -32,5 +32,8 @@ public interface StudentRepo extends JpaRepository<Student, Integer>{
 	Student getStudentByNameAndAddress(String name, String address);	
 	
 	@Query("select u from Student u where u.name like :nm")
-	List<Student> searchName(@Param(value = "nm") String nm);
+	List<Student> getByNameOrAddress(@Param(value = "nm") String nm);
+	
+	@Query("select u from Student u where u.name =:nm or u.address =:ad")
+	List<Student> searchName(@Param(value = "nm") String nm, @Param(value = "ad") String ad);
 }
